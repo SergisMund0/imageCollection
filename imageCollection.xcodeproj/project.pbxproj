@@ -94,24 +94,6 @@
 			path = Tumblr;
 			sourceTree = "<group>";
 		};
-		075E08AA2087CF8000FA2CB1 /* ImageCollection */ = {
-			isa = PBXGroup;
-			children = (
-				075E08AC2087CFF700FA2CB1 /* ImageCollectionModel.swift */,
-			);
-			name = ImageCollection;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		075E08AB2087CF9800FA2CB1 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				075E08AA2087CF8000FA2CB1 /* ImageCollection */,
-			);
-			name = Modules;
-			path = ImageCollection/Modules;
-			sourceTree = "<group>";
-		};
 		075E08AE2087D85D00FA2CB1 /* APIAuthentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +126,7 @@
 		0768B7DB20879BBB003EB53B /* imageCollection */ = {
 			isa = PBXGroup;
 			children = (
-				075E08AB2087CF9800FA2CB1 /* Modules */,
+				07D6783D2087F94800A238A8 /* Modules */,
 				075E08A22087C9D200FA2CB1 /* Networking */,
 				0768B7DC20879BBB003EB53B /* AppDelegate.swift */,
 				0768B7DE20879BBB003EB53B /* ViewController.swift */,
@@ -164,6 +146,22 @@
 				0768B7F620879BBC003EB53B /* Info.plist */,
 			);
 			path = imageCollectionTests;
+			sourceTree = "<group>";
+		};
+		07D6783D2087F94800A238A8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				07D6783E2087F94800A238A8 /* Collection */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		07D6783E2087F94800A238A8 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				075E08AC2087CFF700FA2CB1 /* ImageCollectionModel.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		C1B0CDED67F0D0462700CB15 /* Frameworks */ = {
