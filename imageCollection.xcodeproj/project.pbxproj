@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02BAAA4B5BA2D1F232DC1264 /* Pods_imageCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4395416B303802DCCF0C66CD /* Pods_imageCollection.framework */; };
 		0768B7DD20879BBB003EB53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7DC20879BBB003EB53B /* AppDelegate.swift */; };
 		0768B7DF20879BBB003EB53B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7DE20879BBB003EB53B /* ViewController.swift */; };
 		0768B7E220879BBB003EB53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768B7E020879BBB003EB53B /* Main.storyboard */; };
@@ -38,6 +39,9 @@
 		0768B7F020879BBC003EB53B /* imageCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imageCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0768B7F420879BBC003EB53B /* imageCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionTests.swift; sourceTree = "<group>"; };
 		0768B7F620879BBC003EB53B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4395416B303802DCCF0C66CD /* Pods_imageCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imageCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACFE517712D6552EF2B98CA9 /* Pods-imageCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection.release.xcconfig"; sourceTree = "<group>"; };
+		F53F45E6853B550713D0E999 /* Pods-imageCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BAAA4B5BA2D1F232DC1264 /* Pods_imageCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,8 @@
 				0768B7DB20879BBB003EB53B /* imageCollection */,
 				0768B7F320879BBC003EB53B /* imageCollectionTests */,
 				0768B7DA20879BBB003EB53B /* Products */,
+				E11956E54769220B4365F5FC /* Pods */,
+				C1B0CDED67F0D0462700CB15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +106,23 @@
 			path = imageCollectionTests;
 			sourceTree = "<group>";
 		};
+		C1B0CDED67F0D0462700CB15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4395416B303802DCCF0C66CD /* Pods_imageCollection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E11956E54769220B4365F5FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F53F45E6853B550713D0E999 /* Pods-imageCollection.debug.xcconfig */,
+				ACFE517712D6552EF2B98CA9 /* Pods-imageCollection.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0768B7F920879BBC003EB53B /* Build configuration list for PBXNativeTarget "imageCollection" */;
 			buildPhases = (
+				D262407AC58CBCC1B3885034 /* [CP] Check Pods Manifest.lock */,
 				0768B7D520879BBB003EB53B /* Sources */,
 				0768B7D620879BBB003EB53B /* Frameworks */,
 				0768B7D720879BBB003EB53B /* Resources */,
+				689C2CCE1A00F2EF5780807F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +220,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		689C2CCE1A00F2EF5780807F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwiftAlamofire/OAuthSwiftAlamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwiftAlamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D262407AC58CBCC1B3885034 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-imageCollection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0768B7D520879BBB003EB53B /* Sources */ = {
@@ -360,14 +431,12 @@
 		};
 		0768B7FA20879BBC003EB53B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F53F45E6853B550713D0E999 /* Pods-imageCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = imageCollection/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.individualuser.imageCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -377,14 +446,12 @@
 		};
 		0768B7FB20879BBC003EB53B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACFE517712D6552EF2B98CA9 /* Pods-imageCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = imageCollection/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.individualuser.imageCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -399,11 +466,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = imageCollectionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.individualuser.imageCollectionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -419,11 +482,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = imageCollectionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.individualuser.imageCollectionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
