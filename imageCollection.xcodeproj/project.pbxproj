@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		02BAAA4B5BA2D1F232DC1264 /* Pods_imageCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4395416B303802DCCF0C66CD /* Pods_imageCollection.framework */; };
+		075E08A42087C9E400FA2CB1 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08A32087C9E400FA2CB1 /* APIRouter.swift */; };
+		075E08A62087CBB000FA2CB1 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08A52087CBB000FA2CB1 /* APIConstants.swift */; };
+		075E08A92087CE9400FA2CB1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08A82087CE9400FA2CB1 /* APIClient.swift */; };
+		075E08AD2087CFF700FA2CB1 /* ImageCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08AC2087CFF700FA2CB1 /* ImageCollectionModel.swift */; };
+		075E08B02087D8C500FA2CB1 /* OpenAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08AF2087D8C500FA2CB1 /* OpenAuthorization.swift */; };
+		075E08B22087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08B12087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift */; };
 		0768B7DD20879BBB003EB53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7DC20879BBB003EB53B /* AppDelegate.swift */; };
 		0768B7DF20879BBB003EB53B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7DE20879BBB003EB53B /* ViewController.swift */; };
 		0768B7E220879BBB003EB53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768B7E020879BBB003EB53B /* Main.storyboard */; };
@@ -28,6 +34,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075E08A32087C9E400FA2CB1 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		075E08A52087CBB000FA2CB1 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		075E08A82087CE9400FA2CB1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		075E08AC2087CFF700FA2CB1 /* ImageCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionModel.swift; sourceTree = "<group>"; };
+		075E08AF2087D8C500FA2CB1 /* OpenAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAuthorization.swift; sourceTree = "<group>"; };
+		075E08B12087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAuthorizationConstants.swift; sourceTree = "<group>"; };
 		0768B7D920879BBB003EB53B /* imageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0768B7DC20879BBB003EB53B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0768B7DE20879BBB003EB53B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +75,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075E08A22087C9D200FA2CB1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				075E08A72087CDEC00FA2CB1 /* Tumblr */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		075E08A72087CDEC00FA2CB1 /* Tumblr */ = {
+			isa = PBXGroup;
+			children = (
+				075E08AE2087D85D00FA2CB1 /* APIAuthentication */,
+				075E08A52087CBB000FA2CB1 /* APIConstants.swift */,
+				075E08A32087C9E400FA2CB1 /* APIRouter.swift */,
+				075E08A82087CE9400FA2CB1 /* APIClient.swift */,
+			);
+			path = Tumblr;
+			sourceTree = "<group>";
+		};
+		075E08AA2087CF8000FA2CB1 /* ImageCollection */ = {
+			isa = PBXGroup;
+			children = (
+				075E08AC2087CFF700FA2CB1 /* ImageCollectionModel.swift */,
+			);
+			name = ImageCollection;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		075E08AB2087CF9800FA2CB1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				075E08AA2087CF8000FA2CB1 /* ImageCollection */,
+			);
+			name = Modules;
+			path = ImageCollection/Modules;
+			sourceTree = "<group>";
+		};
+		075E08AE2087D85D00FA2CB1 /* APIAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				075E08B12087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift */,
+				075E08AF2087D8C500FA2CB1 /* OpenAuthorization.swift */,
+			);
+			path = APIAuthentication;
+			sourceTree = "<group>";
+		};
 		0768B7D020879BBB003EB53B = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +144,8 @@
 		0768B7DB20879BBB003EB53B /* imageCollection */ = {
 			isa = PBXGroup;
 			children = (
+				075E08AB2087CF9800FA2CB1 /* Modules */,
+				075E08A22087C9D200FA2CB1 /* Networking */,
 				0768B7DC20879BBB003EB53B /* AppDelegate.swift */,
 				0768B7DE20879BBB003EB53B /* ViewController.swift */,
 				0768B7E020879BBB003EB53B /* Main.storyboard */,
@@ -274,8 +334,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0768B7DF20879BBB003EB53B /* ViewController.swift in Sources */,
+				075E08A62087CBB000FA2CB1 /* APIConstants.swift in Sources */,
+				075E08AD2087CFF700FA2CB1 /* ImageCollectionModel.swift in Sources */,
+				075E08A42087C9E400FA2CB1 /* APIRouter.swift in Sources */,
 				0768B7DD20879BBB003EB53B /* AppDelegate.swift in Sources */,
+				075E08B02087D8C500FA2CB1 /* OpenAuthorization.swift in Sources */,
 				0768B7E520879BBB003EB53B /* imageCollection.xcdatamodeld in Sources */,
+				075E08B22087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift in Sources */,
+				075E08A92087CE9400FA2CB1 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
