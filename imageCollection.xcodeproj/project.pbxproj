@@ -15,12 +15,16 @@
 		075E08B02087D8C500FA2CB1 /* OpenAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08AF2087D8C500FA2CB1 /* OpenAuthorization.swift */; };
 		075E08B22087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08B12087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift */; };
 		0768B7DD20879BBB003EB53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7DC20879BBB003EB53B /* AppDelegate.swift */; };
-		0768B7DF20879BBB003EB53B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7DE20879BBB003EB53B /* ViewController.swift */; };
 		0768B7E220879BBB003EB53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768B7E020879BBB003EB53B /* Main.storyboard */; };
 		0768B7E520879BBB003EB53B /* imageCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7E320879BBB003EB53B /* imageCollection.xcdatamodeld */; };
 		0768B7E720879BBB003EB53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0768B7E620879BBB003EB53B /* Assets.xcassets */; };
 		0768B7EA20879BBB003EB53B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768B7E820879BBB003EB53B /* LaunchScreen.storyboard */; };
 		0768B7F520879BBC003EB53B /* imageCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7F420879BBC003EB53B /* imageCollectionTests.swift */; };
+		07D678402087FC6500A238A8 /* ImageCollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6783F2087FC6500A238A8 /* ImageCollectionProtocols.swift */; };
+		07D678422087FC7B00A238A8 /* ImageCollectionWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678412087FC7B00A238A8 /* ImageCollectionWireFrame.swift */; };
+		07D678442087FC9300A238A8 /* ImageCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678432087FC9300A238A8 /* ImageCollectionInteractor.swift */; };
+		07D678462087FCA800A238A8 /* ImageCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678452087FCA800A238A8 /* ImageCollectionPresenter.swift */; };
+		07D678482087FCB500A238A8 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678472087FCB500A238A8 /* ImageCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +46,6 @@
 		075E08B12087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAuthorizationConstants.swift; sourceTree = "<group>"; };
 		0768B7D920879BBB003EB53B /* imageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0768B7DC20879BBB003EB53B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0768B7DE20879BBB003EB53B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0768B7E120879BBB003EB53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0768B7E420879BBB003EB53B /* imageCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = imageCollection.xcdatamodel; sourceTree = "<group>"; };
 		0768B7E620879BBB003EB53B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,11 @@
 		0768B7F020879BBC003EB53B /* imageCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imageCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0768B7F420879BBC003EB53B /* imageCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionTests.swift; sourceTree = "<group>"; };
 		0768B7F620879BBC003EB53B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07D6783F2087FC6500A238A8 /* ImageCollectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionProtocols.swift; sourceTree = "<group>"; };
+		07D678412087FC7B00A238A8 /* ImageCollectionWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionWireFrame.swift; sourceTree = "<group>"; };
+		07D678432087FC9300A238A8 /* ImageCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionInteractor.swift; sourceTree = "<group>"; };
+		07D678452087FCA800A238A8 /* ImageCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionPresenter.swift; sourceTree = "<group>"; };
+		07D678472087FCB500A238A8 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		4395416B303802DCCF0C66CD /* Pods_imageCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imageCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFE517712D6552EF2B98CA9 /* Pods-imageCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection.release.xcconfig"; sourceTree = "<group>"; };
 		F53F45E6853B550713D0E999 /* Pods-imageCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,7 +137,6 @@
 				07D6783D2087F94800A238A8 /* Modules */,
 				075E08A22087C9D200FA2CB1 /* Networking */,
 				0768B7DC20879BBB003EB53B /* AppDelegate.swift */,
-				0768B7DE20879BBB003EB53B /* ViewController.swift */,
 				0768B7E020879BBB003EB53B /* Main.storyboard */,
 				0768B7E620879BBB003EB53B /* Assets.xcassets */,
 				0768B7E820879BBB003EB53B /* LaunchScreen.storyboard */,
@@ -160,6 +167,11 @@
 			isa = PBXGroup;
 			children = (
 				075E08AC2087CFF700FA2CB1 /* ImageCollectionModel.swift */,
+				07D6783F2087FC6500A238A8 /* ImageCollectionProtocols.swift */,
+				07D678412087FC7B00A238A8 /* ImageCollectionWireFrame.swift */,
+				07D678432087FC9300A238A8 /* ImageCollectionInteractor.swift */,
+				07D678452087FCA800A238A8 /* ImageCollectionPresenter.swift */,
+				07D678472087FCB500A238A8 /* ImageCollectionViewController.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -331,12 +343,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0768B7DF20879BBB003EB53B /* ViewController.swift in Sources */,
+				07D678482087FCB500A238A8 /* ImageCollectionViewController.swift in Sources */,
+				07D678462087FCA800A238A8 /* ImageCollectionPresenter.swift in Sources */,
+				07D678402087FC6500A238A8 /* ImageCollectionProtocols.swift in Sources */,
+				07D678422087FC7B00A238A8 /* ImageCollectionWireFrame.swift in Sources */,
 				075E08A62087CBB000FA2CB1 /* APIConstants.swift in Sources */,
 				075E08AD2087CFF700FA2CB1 /* ImageCollectionModel.swift in Sources */,
 				075E08A42087C9E400FA2CB1 /* APIRouter.swift in Sources */,
 				0768B7DD20879BBB003EB53B /* AppDelegate.swift in Sources */,
 				075E08B02087D8C500FA2CB1 /* OpenAuthorization.swift in Sources */,
+				07D678442087FC9300A238A8 /* ImageCollectionInteractor.swift in Sources */,
 				0768B7E520879BBB003EB53B /* imageCollection.xcdatamodeld in Sources */,
 				075E08B22087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift in Sources */,
 				075E08A92087CE9400FA2CB1 /* APIClient.swift in Sources */,
