@@ -10,15 +10,17 @@ import Foundation
 import Alamofire
 
 final class APIClient {
+    var sessionManagerFinal: SessionManager?
+    
     func fetchImages(tagged: String, completion: @escaping (_ entity: (TumblrTaggedPhotos?), _ error: Error?)->Void) {
         let sessionManager = TumblrOAuth()
         sessionManager.getSessionManager { (sessionManager) in
+            self.sessionManagerFinal = sessionManager
             sessionManager.request(APIRouter.fetchImages(tagged: tagged).asURLString()).validate().responseData { response in
                 switch response.result {
                 case .success:
                     if let jsonData = response.result.value {
                         let jsonDecoder = JSONDecoder()
-                        
                         guard let data = try? jsonDecoder.decode(TumblrTaggedPhotos.self, from: jsonData) else { return }
                         completion(data, nil)
                     }
@@ -26,6 +28,13 @@ final class APIClient {
                     completion(nil, error)
                 }
             }
+        }
+    }
+    
+    func downloadImageTumblr(url: String, completion: @escaping (Data?)->Void) {
+        guard let session = sessionManagerFinal else { return }
+        session.request(url).validate().responseData { imageResponse in
+            completion(imageResponse.value)
         }
     }
 }

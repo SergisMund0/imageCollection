@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// OAuth setup constants.
 struct OAuthConstants {
     static let consumerKey = "oHDfCSisWD5euj37WAjgvh8536rotvOKfRQHo5satW344Y1GvS"
     static let consumerSecret = "xeVgJFAb5rI5baSVpeIb5iBof8LYgrhjlIsydQ2sE5E6r7HidL"
@@ -17,11 +18,14 @@ struct OAuthConstants {
     static let callbackURL = "imageCollection://oauth-callback"
 }
 
+
+/// Keys used to store OAuth credentials in Keychain.
 struct OAuthKeys {
     static let oauthToken = "oauthToken"
     static let oauthTokenSecret = "oauthTokenSecret"
 }
 
+/// Key used to read if there are values stored in the Keychain.
 struct UserDefaultsConstants {
     static let hasOauthCredentialKey = "hasOauthCredential"
 }
