@@ -16,3 +16,12 @@ struct OAuthConstants {
     static let accessTokenURL = "https://www.tumblr.com/oauth/access_token"
     static let callbackURL = "imageCollection://oauth-callback"
 }
+
+struct OAuthKeys {
+    static let oauthToken = "oauthToken"
+    static let oauthTokenSecret = "oauthTokenSecret"
+}
+
+struct UserDefaultsConstants {
+    static let hasOauthCredentialKey = "hasOauthCredential"
+}
