@@ -12,7 +12,9 @@ import AlamofireImage
 
 final class ImageCollectionViewController: UITableViewController {
     var presenter: ImageCollectionViewProtocol?
-    fileprivate var imageCollectionCellModel: ImageCollectionCellModel?
+    fileprivate var imageCollectionCellModel: [ImageCollectionCellModel]?
+    fileprivate var searchController = UISearchController(searchResultsController: nil)
+    fileprivate var filteredPhotos = [ImageCollectionCellModel]()
     
     // MARK: - UIViewController
     
@@ -24,7 +26,6 @@ final class ImageCollectionViewController: UITableViewController {
     
     /// Setups the UISearchBar within UINavigationItem in current view controller.
     private func setupSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -40,16 +41,34 @@ extension ImageCollectionViewController: ImageCollectionViewBehaviorProtocol {
     /// Presenter has updates to be loaded.
     ///
     /// - Parameter model: A model to populate the current table view.
-    func viewDidReceiveUpdates(model: ImageCollectionCellModel) {
+    func viewDidReceiveUpdates(model: [ImageCollectionCellModel]) {
         imageCollectionCellModel = model
         tableView.reloadData()
     }
 }
 
-// MARK: - UISearchBar
+// MARK: - UISearchController
 extension ImageCollectionViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String?) {
+        guard let imageCollectionCellModel = imageCollectionCellModel, let searchText = searchText else { return }
         
+        filteredPhotos = imageCollectionCellModel.filter({ (imageCollectionCellModel: ImageCollectionCellModel ) -> Bool in
+            return imageCollectionCellModel.tag.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+    
+    private func searchBarIsEmpty() -> Bool {
+        // Returns true if there are no content in the search bar
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    fileprivate func searchBarIsFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
     }
 }
 
@@ -60,22 +79,35 @@ extension ImageCollectionViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageCollectionCellModel?.photoURLString.count ?? 0
+        if searchBarIsFiltering() {
+            return filteredPhotos.count
+        }
+        
+        return imageCollectionCellModel?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCollectionCell", for: indexPath) as? ImageCollectionCell else { return UITableViewCell() }
+        
+        // If user is writing the search bar, the content will be filtered else the content shows
+        // the total list of items requested to the service previously.
+        var imageCollectionCellModelTreated = imageCollectionCellModel
+        if searchBarIsFiltering() {
+            imageCollectionCellModelTreated = filteredPhotos
+        }
+        
         // Setup ImageCollectionCell with data received from the presenter.
-        if let urlString = imageCollectionCellModel?.photoURLString[indexPath.row] {
+        if let urlString = imageCollectionCellModelTreated?[indexPath.row].photoURLString {
             if let url = URL(string: urlString) {
                 // Create an animation for current cell while service layer is downloading the image.
                 cell.imageActivityIndicatorView.startAnimating()
                 cell.avatarImageView.af_setImage(withURL: url) { response in
                     cell.imageActivityIndicatorView.stopAnimating()
                 }
-                cell.tagLabelView.text = imageCollectionCellModel?.tag[indexPath.row]
+                cell.tagLabelView.text = imageCollectionCellModelTreated?[indexPath.row].tag
             }
         }
+
         return cell
     }
 }

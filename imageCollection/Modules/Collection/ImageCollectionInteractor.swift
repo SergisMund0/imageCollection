@@ -33,15 +33,12 @@ extension ImageCollectionInteractor: ImageCollectionInteractorBehaviorProtocol {
     /// To do this we join all tags in once string and avoid the nil values from the data model response of photos.
     ///
     /// - Returns: A model readable for the view.
-    func parsedDataModel() -> ImageCollectionCellModel {
-        var mappedModel = ImageCollectionCellModel(photoURLString: [String](), tag: [String](), dateString: [String]())
+    func parsedDataModel() -> [ImageCollectionCellModel] {
+        var mappedModel = [ImageCollectionCellModel]()
         if let tumblrModel = tumblrModel {
             let  fixedPhotos = tumblrModel.response.compactMap({ $0.photos })
-            for photo in fixedPhotos {
-                mappedModel.photoURLString.append(photo[0].originalSize.url)
-            }
-            for currentPhoto in tumblrModel.response {
-                mappedModel.tag.append(currentPhoto.tags.joined(separator: " "))
+            for (photo, tag) in zip(fixedPhotos, tumblrModel.response) {
+                mappedModel.append(ImageCollectionCellModel(photoURLString: photo[0].originalSize.url, tag: tag.tags.joined(separator: " "), dateString: "Powered by Tumblr"))
             }
         }
         return mappedModel

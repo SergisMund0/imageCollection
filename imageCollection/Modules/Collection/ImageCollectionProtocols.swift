@@ -11,7 +11,7 @@ import Foundation
 protocol ImageCollectionViewBehaviorProtocol {
     var presenter: ImageCollectionViewProtocol? { get set }
     
-    func viewDidReceiveUpdates(model: ImageCollectionCellModel)
+    func viewDidReceiveUpdates(model: [ImageCollectionCellModel])
 }
 
 protocol ImageCollectionViewProtocol {
@@ -25,7 +25,7 @@ protocol ImageCollectionInteractorBehaviorProtocol {
 }
 
 protocol ImageCollectionInteractorProtocol {
-    func fetchImage(response: ImageCollectionCellModel)
+    func fetchImage(response: [ImageCollectionCellModel])
 }
 
 protocol ImageCollectionPresenterBehaviorProtocol {

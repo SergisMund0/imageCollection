@@ -21,7 +21,7 @@ extension ImageCollectionPresenter: ImageCollectionViewProtocol {
 }
 
 extension ImageCollectionPresenter: ImageCollectionInteractorProtocol {
-    func fetchImage(response: ImageCollectionCellModel) {
+    func fetchImage(response: [ImageCollectionCellModel]) {
         view?.viewDidReceiveUpdates(model: response)
     }
 }
