@@ -38,7 +38,7 @@ extension ImageCollectionInteractor: ImageCollectionInteractorBehaviorProtocol {
         if let tumblrModel = tumblrModel {
             let  fixedPhotos = tumblrModel.response.compactMap({ $0.photos })
             for (photo, tag) in zip(fixedPhotos, tumblrModel.response) {
-                mappedModel.append(ImageCollectionCellModel(photoURLString: photo[0].originalSize.url, tag: tag.tags.joined(separator: " "), dateString: "Powered by Tumblr"))
+                mappedModel.append(ImageCollectionCellModel(photoURLString: photo[0].originalSize.url, tag: tag.tags.joined(separator: " #"), dateString: "Powered by Tumblr"))
             }
         }
         return mappedModel

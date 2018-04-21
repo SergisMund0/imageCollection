@@ -15,7 +15,7 @@ protocol ImageCollectionViewBehaviorProtocol {
 }
 
 protocol ImageCollectionViewProtocol {
-    func updateTableView(initialTag: String)
+    func updateTableViewFor(tag: String)
 }
 
 protocol ImageCollectionInteractorBehaviorProtocol {

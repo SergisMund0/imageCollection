@@ -15,8 +15,8 @@ final class ImageCollectionPresenter: ImageCollectionPresenterBehaviorProtocol {
 }
 
 extension ImageCollectionPresenter: ImageCollectionViewProtocol {
-    func updateTableView(initialTag: String) {
-        interactor?.requestImages(by: initialTag)
+    func updateTableViewFor(tag: String) {
+        interactor?.requestImages(by: tag)
     }
 }
 

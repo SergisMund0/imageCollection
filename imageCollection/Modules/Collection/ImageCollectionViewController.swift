@@ -21,7 +21,7 @@ final class ImageCollectionViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
-        presenter?.updateTableView(initialTag: "thelordoftherings")
+        presenter?.updateTableViewFor(tag: "thelordoftherings")
     }
     
     /// Setups the UISearchBar within UINavigationItem in current view controller.
@@ -33,6 +33,7 @@ final class ImageCollectionViewController: UITableViewController {
         definesPresentationContext = true
         
         navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
 }
 
@@ -72,6 +73,28 @@ extension ImageCollectionViewController: UISearchResultsUpdating {
     }
 }
 
+// MARK: - UISearchBarDelegate
+extension ImageCollectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard var searchText = searchBar.text else { return }
+        searchText = parse(searchText: searchText)
+        // Hides the keyboard.
+        searchBar.resignFirstResponder()
+        // Reset the search bar input text
+        searchBar.text = nil
+        // Request a new search by tag to the Tumblr API.
+        presenter?.updateTableViewFor(tag: searchText)
+    }
+    
+    /// Concatenates the strings before doing the request.
+    ///
+    /// - Parameter searchText: The text input from user interface.
+    /// - Returns: String readable for the API request.
+    private func parse(searchText: String) -> String {
+        return searchText.replacingOccurrences(of: " ", with: "")
+    }
+}
+
 // MARK: - UITableView
 extension ImageCollectionViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -105,6 +128,7 @@ extension ImageCollectionViewController {
                     cell.imageActivityIndicatorView.stopAnimating()
                 }
                 cell.tagLabelView.text = imageCollectionCellModelTreated?[indexPath.row].tag
+                cell.dateLabelView.text = imageCollectionCellModelTreated?[indexPath.row].dateString
             }
         }
 
