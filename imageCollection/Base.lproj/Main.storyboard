@@ -99,6 +99,71 @@
             </objects>
             <point key="canvasLocation" x="1489" y="21"/>
         </scene>
+        <!--Issues Control View Controller-->
+        <scene sceneID="qK9-H8-SFi">
+            <objects>
+                <viewController storyboardIdentifier="IssuesControlViewController" id="iFM-g3-wxJ" customClass="IssuesControlViewController" customModule="imageCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EfF-Rp-sRb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-XE-ylh">
+                                <rect key="frame" x="137" y="356" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6Ub-bB-Ycu"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="v7l-Vd-Ve7"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="retry_icon"/>
+                                <connections>
+                                    <action selector="controlButtonDidTap:" destination="iFM-g3-wxJ" eventType="touchUpInside" id="PeX-Ac-lqT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="## imageCollection ##" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-Il-dkp">
+                                <rect key="frame" x="20" y="108" width="335" height="34"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="## Retry ##" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-hZ-Jmi">
+                                <rect key="frame" x="141.66666666666666" y="471" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="## Something was wrong ##" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gR-Mg-KHr">
+                                <rect key="frame" x="25" y="712" width="325" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cFW-Il-dkp" firstAttribute="top" secondItem="YeB-hX-dH7" secondAttribute="top" constant="20" id="5Xf-py-AXa"/>
+                            <constraint firstItem="bWJ-XE-ylh" firstAttribute="centerY" secondItem="EfF-Rp-sRb" secondAttribute="centerY" id="8yF-Lc-cQR"/>
+                            <constraint firstItem="YeB-hX-dH7" firstAttribute="bottom" secondItem="0gR-Mg-KHr" secondAttribute="bottom" constant="45" id="DMv-4t-u8E"/>
+                            <constraint firstItem="cYw-hZ-Jmi" firstAttribute="top" secondItem="bWJ-XE-ylh" secondAttribute="bottom" constant="15" id="GmS-NM-lkc"/>
+                            <constraint firstItem="cYw-hZ-Jmi" firstAttribute="centerX" secondItem="bWJ-XE-ylh" secondAttribute="centerX" id="IZN-aa-jdn"/>
+                            <constraint firstItem="0gR-Mg-KHr" firstAttribute="leading" secondItem="YeB-hX-dH7" secondAttribute="leading" constant="25" id="hp8-JP-Eux"/>
+                            <constraint firstItem="cFW-Il-dkp" firstAttribute="leading" secondItem="YeB-hX-dH7" secondAttribute="leading" constant="20" id="rRX-8D-Mj5"/>
+                            <constraint firstItem="YeB-hX-dH7" firstAttribute="trailing" secondItem="0gR-Mg-KHr" secondAttribute="trailing" constant="25" id="rz1-xx-kpx"/>
+                            <constraint firstItem="bWJ-XE-ylh" firstAttribute="centerX" secondItem="EfF-Rp-sRb" secondAttribute="centerX" id="sMs-sD-vOh"/>
+                            <constraint firstItem="YeB-hX-dH7" firstAttribute="trailing" secondItem="cFW-Il-dkp" secondAttribute="trailing" constant="20" id="txa-kh-vtw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YeB-hX-dH7"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="controlButtonSubtitleLabelView" destination="0gR-Mg-KHr" id="vBI-Pz-JBA"/>
+                        <outlet property="controlButtonTitleLabelView" destination="cYw-hZ-Jmi" id="thU-VW-qlI"/>
+                        <outlet property="controlButtonView" destination="bWJ-XE-ylh" id="j1y-5X-kZg"/>
+                        <outlet property="titleLabelView" destination="cFW-Il-dkp" id="4CC-1p-20K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4r-FV-PAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1489" y="720"/>
+        </scene>
         <!--ImageCollectionDetailViewController-->
         <scene sceneID="Bab-GE-TSo">
             <objects>
@@ -195,4 +260,7 @@
             <point key="canvasLocation" x="692" y="20.689655172413794"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="retry_icon" width="100" height="100"/>
+    </resources>
 </document>
