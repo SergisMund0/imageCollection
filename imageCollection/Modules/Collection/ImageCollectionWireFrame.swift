@@ -11,7 +11,7 @@ import UIKit
 
 final class ImageCollectionWireframe {
     static func setupModule() -> UIViewController? {
-        let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "ImageCollectionViewController")
+        let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController")
         guard let view = navigationController.childViewControllers.first as? ImageCollectionViewController else { return nil }
         
         var presenter: ImageCollectionPresenterBehaviorProtocol & ImageCollectionViewProtocol & ImageCollectionInteractorProtocol = ImageCollectionPresenter()

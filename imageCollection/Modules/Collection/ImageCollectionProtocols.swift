@@ -10,16 +10,22 @@ import Foundation
 
 protocol ImageCollectionViewBehaviorProtocol {
     var presenter: ImageCollectionViewProtocol? { get set }
+    
+    func viewDidReceiveUpdates(model: ImageCollectionCellModel)
 }
 
 protocol ImageCollectionViewProtocol {
+    func updateTableView(initialTag: String)
 }
 
 protocol ImageCollectionInteractorBehaviorProtocol {
     var presenter: ImageCollectionInteractorProtocol? { get set }
+    
+    func requestImages(by tag: String)
 }
 
 protocol ImageCollectionInteractorProtocol {
+    func fetchImage(response: ImageCollectionCellModel)
 }
 
 protocol ImageCollectionPresenterBehaviorProtocol {
@@ -29,4 +35,5 @@ protocol ImageCollectionPresenterBehaviorProtocol {
 }
 
 protocol ImageCollectionWireFrameBehaviorProtocol {
+    
 }

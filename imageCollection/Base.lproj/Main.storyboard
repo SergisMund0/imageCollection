@@ -25,6 +25,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="124.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-gc-TEV">
+                                            <rect key="frame" x="35" y="42" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Fix-MI-Aka"/>
+                                                <constraint firstAttribute="width" constant="40" id="ZuZ-Cv-b84"/>
+                                            </constraints>
+                                        </activityIndicatorView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zVT-jy-444">
                                             <rect key="frame" x="5" y="12.333333333333336" width="100" height="100"/>
                                             <constraints>
@@ -59,6 +66,8 @@
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="X9P-gc-TEV" firstAttribute="centerX" secondItem="zVT-jy-444" secondAttribute="centerX" id="0hT-QP-PXG"/>
+                                        <constraint firstItem="X9P-gc-TEV" firstAttribute="centerY" secondItem="zVT-jy-444" secondAttribute="centerY" id="6JJ-3D-J5X"/>
                                         <constraint firstItem="VZK-u6-9hn" firstAttribute="leading" relation="lessThanOrEqual" secondItem="zVT-jy-444" secondAttribute="trailing" constant="179.66999999999999" id="9qY-Tc-Ef7"/>
                                         <constraint firstItem="zVT-jy-444" firstAttribute="leading" secondItem="npq-jx-Deb" secondAttribute="leading" constant="5" id="XCT-qi-9Wb"/>
                                         <constraint firstItem="VZK-u6-9hn" firstAttribute="top" secondItem="b7i-Eb-LTM" secondAttribute="bottom" constant="5" id="Xou-6g-Vjn"/>
@@ -73,6 +82,7 @@
                                 <connections>
                                     <outlet property="avatarImageView" destination="zVT-jy-444" id="nnU-C4-aKA"/>
                                     <outlet property="dateLabelView" destination="VZK-u6-9hn" id="xnv-dV-Y0H"/>
+                                    <outlet property="imageActivityIndicatorView" destination="X9P-gc-TEV" id="aUO-s8-iRP"/>
                                     <outlet property="tagLabelView" destination="xBE-3G-cId" id="q7n-Pw-GTn"/>
                                 </connections>
                             </tableViewCell>

@@ -16,7 +16,7 @@ struct Response: Decodable {
     let blogName: String
     let slug: String
     let tags: [String]
-    let photos: [SizedPhotos]
+    let photos: [SizedPhotos]?
     
     enum CodingKeys: String, CodingKey {
         case blogName = "blog_name"

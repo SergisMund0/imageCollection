@@ -11,7 +11,7 @@ import Alamofire
 
 final class APIClient {
     var sessionManagerFinal: SessionManager?
-    
+
     func fetchImages(tagged: String, completion: @escaping (_ entity: (TumblrTaggedPhotos?), _ error: Error?)->Void) {
         let sessionManager = TumblrOAuth()
         sessionManager.getSessionManager { (sessionManager) in
@@ -28,13 +28,6 @@ final class APIClient {
                     completion(nil, error)
                 }
             }
-        }
-    }
-    
-    func downloadImageTumblr(url: String, completion: @escaping (Data?)->Void) {
-        guard let session = sessionManagerFinal else { return }
-        session.request(url).validate().responseData { imageResponse in
-            completion(imageResponse.value)
         }
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 class ImageCollectionCell: UITableViewCell {
+    @IBOutlet weak var imageActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var tagLabelView: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var dateLabelView: UILabel!
