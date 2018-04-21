@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02BAAA4B5BA2D1F232DC1264 /* Pods_imageCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4395416B303802DCCF0C66CD /* Pods_imageCollection.framework */; };
+		0720D22820893C2E00E7C39D /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720D22720893C2E00E7C39D /* ImageCollectionCell.swift */; };
 		075E08A42087C9E400FA2CB1 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08A32087C9E400FA2CB1 /* APIRouter.swift */; };
 		075E08A62087CBB000FA2CB1 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08A52087CBB000FA2CB1 /* APIConstants.swift */; };
 		075E08A92087CE9400FA2CB1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E08A82087CE9400FA2CB1 /* APIClient.swift */; };
@@ -25,6 +26,9 @@
 		07D678442087FC9300A238A8 /* ImageCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678432087FC9300A238A8 /* ImageCollectionInteractor.swift */; };
 		07D678462087FCA800A238A8 /* ImageCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678452087FCA800A238A8 /* ImageCollectionPresenter.swift */; };
 		07D678482087FCB500A238A8 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678472087FCB500A238A8 /* ImageCollectionViewController.swift */; };
+		07FB7F42208A7E1800162DBD /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB7F41208A7E1800162DBD /* KeychainPasswordItem.swift */; };
+		07FB7F44208A7EAF00162DBD /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB7F43208A7EAF00162DBD /* KeychainConfiguration.swift */; };
+		07FB7F46208AB3AD00162DBD /* ImageCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB7F45208AB3AD00162DBD /* ImageCollectionCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0720D22720893C2E00E7C39D /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		075E08A32087C9E400FA2CB1 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		075E08A52087CBB000FA2CB1 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		075E08A82087CE9400FA2CB1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -59,6 +64,9 @@
 		07D678432087FC9300A238A8 /* ImageCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionInteractor.swift; sourceTree = "<group>"; };
 		07D678452087FCA800A238A8 /* ImageCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionPresenter.swift; sourceTree = "<group>"; };
 		07D678472087FCB500A238A8 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		07FB7F41208A7E1800162DBD /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		07FB7F43208A7EAF00162DBD /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		07FB7F45208AB3AD00162DBD /* ImageCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCellModel.swift; sourceTree = "<group>"; };
 		4395416B303802DCCF0C66CD /* Pods_imageCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imageCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFE517712D6552EF2B98CA9 /* Pods-imageCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection.release.xcconfig"; sourceTree = "<group>"; };
 		F53F45E6853B550713D0E999 /* Pods-imageCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imageCollection/Pods-imageCollection.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0720D22620893C1700E7C39D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				07FB7F45208AB3AD00162DBD /* ImageCollectionCellModel.swift */,
+				0720D22720893C2E00E7C39D /* ImageCollectionCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		075E08A22087C9D200FA2CB1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +151,8 @@
 		0768B7DB20879BBB003EB53B /* imageCollection */ = {
 			isa = PBXGroup;
 			children = (
+				07FB7F40208A7E0000162DBD /* Storage */,
+				0720D22620893C1700E7C39D /* Components */,
 				07D6783D2087F94800A238A8 /* Modules */,
 				075E08A22087C9D200FA2CB1 /* Networking */,
 				0768B7DC20879BBB003EB53B /* AppDelegate.swift */,
@@ -174,6 +193,15 @@
 				07D678472087FCB500A238A8 /* ImageCollectionViewController.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		07FB7F40208A7E0000162DBD /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				07FB7F43208A7EAF00162DBD /* KeychainConfiguration.swift */,
+				07FB7F41208A7E1800162DBD /* KeychainPasswordItem.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		C1B0CDED67F0D0462700CB15 /* Frameworks */ = {
@@ -348,10 +376,14 @@
 				07D678402087FC6500A238A8 /* ImageCollectionProtocols.swift in Sources */,
 				07D678422087FC7B00A238A8 /* ImageCollectionWireFrame.swift in Sources */,
 				075E08A62087CBB000FA2CB1 /* APIConstants.swift in Sources */,
+				07FB7F42208A7E1800162DBD /* KeychainPasswordItem.swift in Sources */,
 				075E08AD2087CFF700FA2CB1 /* ImageCollectionModel.swift in Sources */,
 				075E08A42087C9E400FA2CB1 /* APIRouter.swift in Sources */,
+				0720D22820893C2E00E7C39D /* ImageCollectionCell.swift in Sources */,
 				0768B7DD20879BBB003EB53B /* AppDelegate.swift in Sources */,
+				07FB7F44208A7EAF00162DBD /* KeychainConfiguration.swift in Sources */,
 				075E08B02087D8C500FA2CB1 /* OpenAuthorization.swift in Sources */,
+				07FB7F46208AB3AD00162DBD /* ImageCollectionCellModel.swift in Sources */,
 				07D678442087FC9300A238A8 /* ImageCollectionInteractor.swift in Sources */,
 				0768B7E520879BBB003EB53B /* imageCollection.xcdatamodeld in Sources */,
 				075E08B22087DAAB00FA2CB1 /* OpenAuthorizationConstants.swift in Sources */,
