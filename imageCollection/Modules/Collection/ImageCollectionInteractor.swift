@@ -22,9 +22,20 @@ extension ImageCollectionInteractor: ImageCollectionInteractorBehaviorProtocol {
     func requestImages(by tag: String) {
         apiClient.fetchImages(tagged: tag) { response, error in
             if error == nil {
-                self.tumblrModel = response
-                let model = self.parsedDataModel()
-                self.presenter?.fetchImage(response: model)
+                if let elements = response?.response.count {
+                    if elements > 0 {
+                        self.tumblrModel = response
+                        let model = self.parsedDataModel()
+                        // There are elements to show.
+                        self.presenter?.fetchImage(response: model, error: nil)
+                    } else {
+                        // The request was correctly executed but there are no elements to show.
+                        self.presenter?.fetchImage(response: nil, error: nil)
+                    }
+                }
+            } else {
+                // The request was wrong.
+                self.presenter?.fetchImage(response: nil, error: error)
             }
         }
     }

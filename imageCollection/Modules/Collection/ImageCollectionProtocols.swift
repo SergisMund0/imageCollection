@@ -27,7 +27,7 @@ protocol ImageCollectionInteractorBehaviorProtocol {
 }
 
 protocol ImageCollectionInteractorProtocol {
-    func fetchImage(response: [ImageCollectionCellModel])
+    func fetchImage(response: [ImageCollectionCellModel]?, error: Error?)
 }
 
 protocol ImageCollectionPresenterBehaviorProtocol {
@@ -39,4 +39,5 @@ protocol ImageCollectionPresenterBehaviorProtocol {
 protocol ImageCollectionWireFrameBehaviorProtocol {
     static func setupModule() -> UIViewController?
     func navigateToImageCollectionDetailModule(from view: ImageCollectionViewBehaviorProtocol, model: ImageCollectionCellModel)
+    func presentIssuesControlModule(from view: ImageCollectionViewBehaviorProtocol, model: IssuesControlModel) 
 }

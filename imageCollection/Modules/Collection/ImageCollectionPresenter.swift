@@ -27,7 +27,20 @@ extension ImageCollectionPresenter: ImageCollectionViewProtocol {
 }
 
 extension ImageCollectionPresenter: ImageCollectionInteractorProtocol {
-    func fetchImage(response: [ImageCollectionCellModel]) {
+    func fetchImage(response: [ImageCollectionCellModel]?, error: Error?) {
+        guard let response = response else {
+            guard let view = view else { return }
+            // If the error is controlled.
+            if let error = error {
+                let issuesControlModel = IssuesControlModel(title: "imageCollection", buttonHidden: false, buttonTitle: "Retry", subtitle: error.localizedDescription)
+                wireFrame?.presentIssuesControlModule(from: view, model: issuesControlModel)
+            } else {
+                // Else we put a generic message in the error.
+                let issuesControlModel = IssuesControlModel(title: "imageCollection", buttonHidden: false, buttonTitle: "Retry", subtitle: "Something was wrong")
+                wireFrame?.presentIssuesControlModule(from: view, model: issuesControlModel)
+            }
+            return
+        }
         view?.viewDidReceiveUpdates(model: response)
     }
 }

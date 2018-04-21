@@ -33,11 +33,29 @@ final class ImageCollectionWireframe {
 }
 
 extension ImageCollectionWireframe: ImageCollectionWireFrameBehaviorProtocol {
+    /// ImageCollectionDetail view will be pushed. This view is normally presented with details of first request to API.
+    ///
+    /// - Parameters:
+    ///   - view: Context which will be pushed.
+    ///   - model: Data model for the context that will be pushed.
     func navigateToImageCollectionDetailModule(from view: ImageCollectionViewBehaviorProtocol, model: ImageCollectionCellModel) {
         guard let imageCollectionDetailViewController = ImageCollectionDetailWireFrame.setupModule(detailModel: model) else { return }
         
         if let sourceViewController = view as? UIViewController {
             sourceViewController.navigationController?.pushViewController(imageCollectionDetailViewController, animated: true)
+        }
+    }
+    
+    /// IssuesControl view will be present as modal. This view is normally presented when a error is produced.
+    ///
+    /// - Parameters:
+    ///   - view: Context which will be presented.
+    ///   - model: Data model for the context that will be presented.
+    func presentIssuesControlModule(from view: ImageCollectionViewBehaviorProtocol, model: IssuesControlModel) {
+        guard let issuesControlViewController = IssuesControlWireFrame.setupModule(issuesControlModel: model) as? IssuesControlViewController else { return }
+        
+        if let sourceViewController = view as? UIViewController {
+            sourceViewController.navigationController?.present(issuesControlViewController, animated: true)
         }
     }
 }
