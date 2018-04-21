@@ -33,6 +33,12 @@ final class ImageCollectionWireframe {
 }
 
 extension ImageCollectionWireframe: ImageCollectionWireFrameBehaviorProtocol {
-    
+    func navigateToImageCollectionDetailModule(from view: ImageCollectionViewBehaviorProtocol, model: ImageCollectionCellModel) {
+        guard let imageCollectionDetailViewController = ImageCollectionDetailWireFrame.setupModule(detailModel: model) else { return }
+        
+        if let sourceViewController = view as? UIViewController {
+            sourceViewController.navigationController?.pushViewController(imageCollectionDetailViewController, animated: true)
+        }
+    }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ImageCollectionViewBehaviorProtocol {
     var presenter: ImageCollectionViewProtocol? { get set }
@@ -16,6 +17,7 @@ protocol ImageCollectionViewBehaviorProtocol {
 
 protocol ImageCollectionViewProtocol {
     func updateTableViewFor(tag: String)
+    func imageCollectionDidSelect(model: ImageCollectionCellModel)
 }
 
 protocol ImageCollectionInteractorBehaviorProtocol {
@@ -35,5 +37,6 @@ protocol ImageCollectionPresenterBehaviorProtocol {
 }
 
 protocol ImageCollectionWireFrameBehaviorProtocol {
-    
+    static func setupModule() -> UIViewController?
+    func navigateToImageCollectionDetailModule(from view: ImageCollectionViewBehaviorProtocol, model: ImageCollectionCellModel)
 }

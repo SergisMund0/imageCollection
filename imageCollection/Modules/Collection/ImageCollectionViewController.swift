@@ -95,7 +95,7 @@ extension ImageCollectionViewController: UISearchBarDelegate {
     }
 }
 
-// MARK: - UITableView
+// MARK: - UITableViewDataSource
 extension ImageCollectionViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -133,5 +133,17 @@ extension ImageCollectionViewController {
         }
 
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ImageCollectionViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchBarIsFiltering() {
+            presenter?.imageCollectionDidSelect(model: filteredPhotos[indexPath.row])
+        } else {
+            guard let imageCollectionCellModel = imageCollectionCellModel else { return }
+            presenter?.imageCollectionDidSelect(model: imageCollectionCellModel[indexPath.row])
+        }
     }
 }

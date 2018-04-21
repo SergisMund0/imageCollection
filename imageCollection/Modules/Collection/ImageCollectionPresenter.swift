@@ -18,6 +18,12 @@ extension ImageCollectionPresenter: ImageCollectionViewProtocol {
     func updateTableViewFor(tag: String) {
         interactor?.requestImages(by: tag)
     }
+    
+    func imageCollectionDidSelect(model: ImageCollectionCellModel) {
+        guard let view = view else { return }
+        
+        wireFrame?.navigateToImageCollectionDetailModule(from: view, model: model)
+    }
 }
 
 extension ImageCollectionPresenter: ImageCollectionInteractorProtocol {

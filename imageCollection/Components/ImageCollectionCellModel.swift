@@ -12,4 +12,5 @@ struct ImageCollectionCellModel {
     var photoURLString: String
     var tag: String
     var dateString: String
+    var blogName: String
 }
