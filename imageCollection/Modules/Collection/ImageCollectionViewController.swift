@@ -128,7 +128,7 @@ extension ImageCollectionViewController {
                     cell.imageActivityIndicatorView.stopAnimating()
                 }
                 cell.tagLabelView.text = imageCollectionCellModelTreated?[indexPath.row].tag
-                cell.dateLabelView.text = imageCollectionCellModelTreated?[indexPath.row].dateString
+                cell.dateLabelView.text = imageCollectionCellModelTreated?[indexPath.row].powered
             }
         }
 

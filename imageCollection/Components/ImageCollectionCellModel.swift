@@ -11,6 +11,6 @@ import Foundation
 struct ImageCollectionCellModel {
     var photoURLString: String
     var tag: String
-    var dateString: String
+    var powered: String
     var blogName: String
 }
