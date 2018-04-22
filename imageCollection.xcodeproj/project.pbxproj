@@ -33,6 +33,7 @@
 		0768B7E720879BBB003EB53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0768B7E620879BBB003EB53B /* Assets.xcassets */; };
 		0768B7EA20879BBB003EB53B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768B7E820879BBB003EB53B /* LaunchScreen.storyboard */; };
 		0768B7F520879BBC003EB53B /* imageCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768B7F420879BBC003EB53B /* imageCollectionTests.swift */; };
+		0793C4EB208C0E3D00725AA5 /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0793C4EA208C0E3D00725AA5 /* CoreDataWrapper.swift */; };
 		07D678402087FC6500A238A8 /* ImageCollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6783F2087FC6500A238A8 /* ImageCollectionProtocols.swift */; };
 		07D678422087FC7B00A238A8 /* ImageCollectionWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678412087FC7B00A238A8 /* ImageCollectionWireFrame.swift */; };
 		07D678442087FC9300A238A8 /* ImageCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D678432087FC9300A238A8 /* ImageCollectionInteractor.swift */; };
@@ -83,6 +84,7 @@
 		0768B7F020879BBC003EB53B /* imageCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imageCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0768B7F420879BBC003EB53B /* imageCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionTests.swift; sourceTree = "<group>"; };
 		0768B7F620879BBC003EB53B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0793C4EA208C0E3D00725AA5 /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
 		07D6783F2087FC6500A238A8 /* ImageCollectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionProtocols.swift; sourceTree = "<group>"; };
 		07D678412087FC7B00A238A8 /* ImageCollectionWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionWireFrame.swift; sourceTree = "<group>"; };
 		07D678432087FC9300A238A8 /* ImageCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionInteractor.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				07FB7F43208A7EAF00162DBD /* KeychainConfiguration.swift */,
 				07FB7F41208A7E1800162DBD /* KeychainPasswordItem.swift */,
+				0793C4EA208C0E3D00725AA5 /* CoreDataWrapper.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				071D5B95208BD4C00046E961 /* IssuesControlProtocols.swift in Sources */,
 				071D5B90208BAEA90046E961 /* ImageCollectionDetailViewController.swift in Sources */,
 				071D5B8E208BAE9B0046E961 /* ImageCollectionDetailPresenter.swift in Sources */,
+				0793C4EB208C0E3D00725AA5 /* CoreDataWrapper.swift in Sources */,
 				07D678402087FC6500A238A8 /* ImageCollectionProtocols.swift in Sources */,
 				071D5B8C208BAE880046E961 /* ImageCollectionDetailInteractor.swift in Sources */,
 				07D678422087FC7B00A238A8 /* ImageCollectionWireFrame.swift in Sources */,
