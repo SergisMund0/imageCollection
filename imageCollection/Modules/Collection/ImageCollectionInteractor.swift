@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 final class ImageCollectionInteractor {
     var presenter: ImageCollectionInteractorProtocol?
@@ -42,6 +43,7 @@ extension ImageCollectionInteractor: ImageCollectionInteractorBehaviorProtocol {
 
     /// When the data is obtained from API client. We have to treat them in a specific way.
     /// To do this we join all tags in once string and avoid the nil values from the data model response of photos.
+    /// Then the usefull data is stored in Core Data.
     ///
     /// - Returns: A model readable for the view.
     func parsedDataModel() -> [ImageCollectionCellModel] {
@@ -49,9 +51,18 @@ extension ImageCollectionInteractor: ImageCollectionInteractorBehaviorProtocol {
         if let tumblrModel = tumblrModel {
             let  fixedPhotos = tumblrModel.response.compactMap({ $0.photos })
             for (photo, response) in zip(fixedPhotos, tumblrModel.response) {
-                mappedModel.append(ImageCollectionCellModel(photoURLString: photo[0].originalSize.url, tag: response.tags.joined(separator: " #"), dateString: "Powered by Tumblr", blogName: response.blogName))
+                // Delete old stored values from Core Data.
+                CoreDataWrapper.delete(entityName: "TaggedPhoto")
+                // Save the useful entities for our UITableView.
+                CoreDataWrapper.save(entityName: "TaggedPhoto", value: photo[0].originalSize.url, keyPath: "photoURLString")
+                CoreDataWrapper.save(entityName: "TaggedPhoto", value: response.tags.joined(separator: " #"), keyPath: "tag")
+                CoreDataWrapper.save(entityName: "TaggedPhoto", value: "Powered by Tumblr", keyPath: "powered")
+                CoreDataWrapper.save(entityName: "TaggedPhoto", value: response.blogName, keyPath: "blogName")
+                
+                mappedModel.append(ImageCollectionCellModel(photoURLString: photo[0].originalSize.url, tag: response.tags.joined(separator: " #"), powered: "Powered by Tumblr", blogName: response.blogName))
             }
         }
+        
         return mappedModel
     }
 }
